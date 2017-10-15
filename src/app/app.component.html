@@ -1,0 +1,28 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Lato:300');
+</style>
+
+<mat-sidenav-container class="background">
+  <h1 id="title">
+    <button id="side-nav-button" mat-mini-fab (click)="sidenav.toggle()" color="dark">
+      <i class="material-icons md-24">menu</i>
+    </button>
+    {{title}}
+  </h1>
+
+  <mat-sidenav #sidenav mode="push" class="sidenav-menu outer" >
+    <div class="middle">
+      <div class="inner">
+
+        <p class="nav-url"><a href="" target="_blank">News</a></p>
+        <p class="nav-url"><a href="" target="_blank">Stock</a></p>
+        <p class="nav-url"><a href="" target="_blank">About</a></p>
+
+      </div>
+    </div>
+  </mat-sidenav>
+
+  <div class="sidenav-content"></div>
+</mat-sidenav-container>
+
+

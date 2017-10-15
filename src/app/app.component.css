@@ -1,0 +1,47 @@
+.background {
+  background: url('../assets/new-york-final-dark.jpg') no-repeat right top fixed;
+  background-size: cover;
+}
+
+#title {
+  color: white;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+#side-nav-button {
+  vertical-align: middle;
+  float: left;
+  margin-left: 10px;
+}
+
+.sidenav-content {
+  vertical-align: middle;
+}
+
+.sidenav-menu {
+  height: 100vh;
+  padding: 10%;
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 25%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-url {
+  font-size: large;
+}
