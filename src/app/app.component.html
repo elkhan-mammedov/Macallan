@@ -14,15 +14,17 @@
     <div class="middle">
       <div class="inner">
 
-        <p class="nav-url"><a href="" target="_blank">News</a></p>
-        <p class="nav-url"><a href="" target="_blank">Stock</a></p>
-        <p class="nav-url"><a href="" target="_blank">About</a></p>
+        <p class="nav-url"><a [routerLink]="['/news']" (click)="sidenav.toggle()">News</a></p>
+        <p class="nav-url"><a [routerLink]="['/stock']" (click)="sidenav.toggle()">Stock</a></p>
+        <p class="nav-url"><a [routerLink]="['/about']" (click)="sidenav.toggle()">About</a></p>
 
       </div>
     </div>
   </mat-sidenav>
 
-  <div class="sidenav-content"></div>
+  <div class="sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-sidenav-container>
 
 

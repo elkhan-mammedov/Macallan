@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {
   MatAutocompleteModule,
@@ -35,16 +35,33 @@ import {
   MatTooltipModule,
   MatStepperModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  RouterModule,
+  Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { AboutComponent } from './about/about.component';
+import { StockComponent } from './stock/stock.component';
+import { NewsComponent } from './news/news.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'news', pathMatch: 'full' },
+  { path: 'news', component: NewsComponent },
+  { path: 'stock', component: StockComponent },
+  { path: 'about', component: AboutComponent }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AboutComponent,
+    StockComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     MatAutocompleteModule,
     MatButtonModule,
@@ -77,7 +94,8 @@ import { AppComponent } from './app.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
