@@ -1,12 +1,12 @@
 .background {
-  background: url('../assets/new-york-final-dark.jpg') no-repeat right top fixed;
+  background: url('../assets/new-york-5.jpg') no-repeat right top fixed;
   background-size: cover;
 }
 
 #title {
   color: white;
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Tinos', serif;
 }
 
 #side-nav-button {
@@ -44,4 +44,36 @@
 
 .nav-url {
   font-size: large;
+}
+
+.center {
+  width: auto;
+  margin: 0 auto;
+  word-wrap: break-word;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* unvisited link */
+.sidebar-link a:link {
+  color: white;
+}
+
+/* visited link */
+.sidebar-link a:visited {
+  color: white
+}
+
+/* mouse over link */
+.sidebar-link a:hover {
+  color: grey;
+}
+
+/* selected link */
+.sidebar-link a:active {
+  color: lightgrey;
 }

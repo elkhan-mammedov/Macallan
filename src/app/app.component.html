@@ -1,5 +1,5 @@
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Lato:300');
+  @import url('https://fonts.googleapis.com/css?family=Tinos');
 </style>
 
 <mat-sidenav-container class="background">
@@ -14,9 +14,12 @@
     <div class="middle">
       <div class="inner">
 
-        <p class="nav-url"><a [routerLink]="['/news']" (click)="sidenav.toggle()">News</a></p>
-        <p class="nav-url"><a [routerLink]="['/stock']" (click)="sidenav.toggle()">Stock</a></p>
-        <p class="nav-url"><a [routerLink]="['/about']" (click)="sidenav.toggle()">About</a></p>
+        <p class="nav-url sidebar-link"><a [routerLink]="['/news']"
+                               (click)="sidenav.toggle()">News</a></p>
+        <p class="nav-url sidebar-link"><a [routerLink]="['/stock']"
+                               (click)="sidenav.toggle()">Stock</a></p>
+        <p class="nav-url sidebar-link"><a [routerLink]="['/about']"
+                               (click)="sidenav.toggle()">About</a></p>
 
       </div>
     </div>

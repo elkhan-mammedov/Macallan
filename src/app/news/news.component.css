@@ -1,8 +1,19 @@
-.example-full-width {
+.full-width {
   color: white;
   width: 50%;
 }
 
 #search-button {
   vertical-align: middle;
+}
+
+#back-button {
+  display: none;
+  vertical-align: middle;
+}
+
+.search-card {
+  width:75%;
+  margin:10px auto;
+  flex-wrap: wrap;
 }

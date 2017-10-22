@@ -7,24 +7,8 @@ html, body, mat-sidenav-container {
   height: 100%;
 }
 
-/* unvisited link */
-a:link {
-  color: white;
-}
-
-/* visited link */
-a:visited {
-  color: white
-}
-
-/* mouse over link */
-a:hover {
-  color: grey;
-}
-
-/* selected link */
-a:active {
-  color: lightgrey;
+* {
+  font-family: 'Tinos', serif;
 }
 
 /* Rules for sizing the icon. */

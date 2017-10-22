@@ -1,0 +1,43 @@
+.news-card {
+  background: white;
+}
+
+.news-card-text {
+  color: #d32f2f;
+  font-size: 18px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.news-card-title {
+  font-size: 26px;
+  color: black;
+  text-align: left;
+}
+
+.news-card-subtitle {
+  color: #424242;
+  font-size: 14px;
+  text-align: left;
+  word-break: break-all;
+}
+
+/* unvisited link */
+.news-card-link a:link {
+  color: white;
+}
+
+/* visited link */
+.news-card-link a:visited {
+  color: white
+}
+
+/* mouse over link */
+.news-card-link a:hover {
+  color: grey;
+}
+
+/* selected link */
+.news-card-link a:active {
+  color: lightgrey;
+}

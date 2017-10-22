@@ -43,6 +43,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { StockComponent } from './stock/stock.component';
 import { NewsComponent } from './news/news.component';
+import { NewsCardComponent } from './news-card/news-card.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'news', pathMatch: 'full' },
@@ -56,7 +57,8 @@ const routes: Routes = [
     AppComponent,
     AboutComponent,
     StockComponent,
-    NewsComponent
+    NewsComponent,
+    NewsCardComponent
   ],
   imports: [
     BrowserModule,
