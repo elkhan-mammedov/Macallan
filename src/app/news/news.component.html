@@ -10,7 +10,7 @@
            [formControl]="newsCtrl"
            style="color: white">
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let news of filteredNews | async" [value]="news.headline">
+      <mat-option *ngFor="let news of filteredNewsSearchBar | async" [value]="news.headline">
         <span>{{ news.headline }}</span> |
         <small>Date: {{news.datetime}}</small>
       </mat-option>

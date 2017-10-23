@@ -1,0 +1,51 @@
+<mat-card class="stock-card">
+  <mat-card-header>
+    <table class="stock-table">
+      <tr class="stock-card-text">
+        <td rowspan="2" colspan="2"
+            class="stock-card-text-left"
+            style="font-size: 20px; color: black"><img
+          src={{sqm.imgUrl}} alt="Logo"
+          style="vertical-align: middle;">
+          {{sqm.companyName}}
+          ({{sqm.symbol}})</td>
+        <td rowspan="2" class="stock-card-text-right" style="width:25%">
+          <span style="color: #616161;">Price:</span>
+            {{numberWithCommas(sqm.latestPrice)}}</td>
+        <td rowspan="2" class="stock-card-text-right" style="width:25%">
+          <span style="color: #616161;">Change:</span>
+          {{numberWithCommas(sqm.change)}}</td>
+      </tr>
+      <tr></tr>
+      <tr>
+        <td class="stock-card-text-left" style="font-size: 18px">Volume:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm
+          .latestVolume)}}</td>
+        <td class="bold_font stock-card-text-left">Market Cap:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.marketCap)
+          }}</td>
+      </tr>
+      <tr>
+        <td class="bold_font stock-card-text-left">Avg Daily Vol:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm
+          .avgTotalVolume)}}</td>
+        <td class="bold_font stock-card-text-left">52 Week High:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.week52High)
+          }}</td>
+      </tr>
+      <tr>
+        <td class="bold_font stock-card-text-left">Open:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.open)}}</td>
+        <td class="bold_font stock-card-text-left">52 Week Low:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.week52Low)
+          }}</td>
+      </tr>
+      <tr>
+        <td class="bold_font stock-card-text-left">Close:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.close)}}</td>
+        <td colspan="2" class="stock-card-text-right"><button mat-raised-button
+        >More News</button></td>
+      </tr>
+    </table>
+  </mat-card-header>
+</mat-card>

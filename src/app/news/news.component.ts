@@ -15,7 +15,7 @@ import * as jQuery from 'jquery';
 })
 export class NewsComponent implements OnInit {
   newsCtrl: FormControl;
-  filteredNews: Observable<any[]>;
+  filteredNewsSearchBar: Observable<any[]>;
 
   private apiUrl = 'https://api.iextrading.com/1.0/stock/market/news/last/25';
   latestNews: NewsModel[] = [];
@@ -24,7 +24,7 @@ export class NewsComponent implements OnInit {
   constructor(private http: Http) {
     this.getLatestNews();
     this.newsCtrl = new FormControl();
-    this.filteredNews = this.newsCtrl.valueChanges
+    this.filteredNewsSearchBar = this.newsCtrl.valueChanges
       .startWith(null)
       .map(n => n ? this.filterNews(n) : []);
   }
@@ -62,4 +62,5 @@ export class NewsComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

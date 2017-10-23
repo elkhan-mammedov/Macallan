@@ -1,0 +1,62 @@
+.stock-card {
+  background: white;
+}
+
+.stock-card-text-left {
+  color: #616161;
+  font-size: 18px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.stock-card-text-right {
+  color: #FF5722;
+  font-size: 18px;
+  text-align: right;
+  word-break: break-all;
+}
+
+/* unvisited link */
+.stock-card-link a:link {
+  color: white;
+}
+
+/* visited link */
+.stock-card-link a:visited {
+  color: white
+}
+
+/* mouse over link */
+.stock-card-link a:hover {
+  color: grey;
+}
+
+/* selected link */
+.stock-card-link a:active {
+  color: lightgrey;
+}
+
+.stock_card {
+  text-align: left;
+  table-layout: fixed;
+}
+
+.stock_card td {
+  padding: 10px;
+}
+
+.bold_font {
+  font-style: oblique;
+}
+
+.stock-table {
+  color: black;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0.5em;
+}
+
+img {
+  max-width:50%;
+  max-height:50%;
+}
