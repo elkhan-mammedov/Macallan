@@ -9,10 +9,10 @@
           style="vertical-align: middle;">
           {{sqm.companyName}}
           ({{sqm.symbol}})</td>
-        <td rowspan="2" class="stock-card-text-right" style="width:25%">
+        <td rowspan="2" class="stock-card-text-right">
           <span style="color: #616161;">Price:</span>
             {{numberWithCommas(sqm.latestPrice)}}</td>
-        <td rowspan="2" class="stock-card-text-right" style="width:25%">
+        <td rowspan="2" class="stock-card-text-right">
           <span style="color: #616161;">Change:</span>
           {{numberWithCommas(sqm.change)}}</td>
       </tr>
@@ -21,14 +21,21 @@
         <td class="stock-card-text-left" style="font-size: 18px">Volume:</td>
         <td class="stock-card-text-right">{{numberWithCommas(sqm
           .latestVolume)}}</td>
-        <td class="bold_font stock-card-text-left">Market Cap:</td>
-        <td class="stock-card-text-right">{{numberWithCommas(sqm.marketCap)
-          }}</td>
-      </tr>
-      <tr>
         <td class="bold_font stock-card-text-left">Avg Daily Vol:</td>
         <td class="stock-card-text-right">{{numberWithCommas(sqm
           .avgTotalVolume)}}</td>
+      </tr>
+      <tr>
+        <td class="bold_font stock-card-text-left">Market Cap:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.marketCap)
+          }}</td>
+        <td class="bold_font stock-card-text-left">Sector:</td>
+        <td class="stock-card-text-right">{{sqm.sector}}</td>
+      </tr>
+      <tr>
+        <td class="bold_font stock-card-text-left">52 Week Low:</td>
+        <td class="stock-card-text-right">{{numberWithCommas(sqm.week52Low)
+          }}</td>
         <td class="bold_font stock-card-text-left">52 Week High:</td>
         <td class="stock-card-text-right">{{numberWithCommas(sqm.week52High)
           }}</td>
@@ -36,15 +43,20 @@
       <tr>
         <td class="bold_font stock-card-text-left">Open:</td>
         <td class="stock-card-text-right">{{numberWithCommas(sqm.open)}}</td>
-        <td class="bold_font stock-card-text-left">52 Week Low:</td>
-        <td class="stock-card-text-right">{{numberWithCommas(sqm.week52Low)
-          }}</td>
-      </tr>
-      <tr>
         <td class="bold_font stock-card-text-left">Close:</td>
         <td class="stock-card-text-right">{{numberWithCommas(sqm.close)}}</td>
-        <td colspan="2" class="stock-card-text-right"><button mat-raised-button
-        >More News</button></td>
+      </tr>
+      <tr>
+        <td class="bold_font stock-card-text-left">Open Time:</td>
+        <td class="stock-card-text-right">{{unixTime(sqm.openTime)}}</td>
+        <td class="bold_font stock-card-text-left">Close Time:</td>
+        <td class="stock-card-text-right">{{unixTime(sqm.closeTime)}}</td>
+      </tr>
+      <tr>
+        <td colspan="4" class="stock-card-text-right">
+          <button mat-raised-button>News</button>
+          <button mat-raised-button>Graph</button>
+        </td>
       </tr>
     </table>
   </mat-card-header>

@@ -45,7 +45,7 @@ export class NewsComponent implements OnInit {
   }
 
   private search() {
-    const searchQuery: string = jQuery('#search-bar').val();
+    const searchQuery: string = jQuery('#search-bar').val() as string;
     this.filteredLatestNews = [];
     for ( const nm of this.latestNews ) {
       if (nm.headline.toLocaleLowerCase().indexOf(searchQuery.toLocaleLowerCase()) === 0) {

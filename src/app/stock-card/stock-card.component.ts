@@ -18,6 +18,10 @@ export class StockCardComponent implements OnInit {
     return parts.join('.');
   }
 
+  unixTime(time: string) {
+    return new Date(time).toString();
+  }
+
   ngOnInit() {
   }
 

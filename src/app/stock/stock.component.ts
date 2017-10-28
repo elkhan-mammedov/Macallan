@@ -47,7 +47,7 @@ export class StockComponent implements OnInit {
   }
 
   private search() {
-    const searchQuery: string = jQuery('#search-bar').val();
+    const searchQuery: string = jQuery('#search-bar').val() as string;
     this.filteredStocks = [];
     let i = 1;
     for ( const s of this.stocks ) {
