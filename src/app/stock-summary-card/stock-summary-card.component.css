@@ -2,6 +2,13 @@
   background: white;
 }
 
+.stock-card-text-center {
+  color: #616161;
+  font-size: 18px;
+  text-align: center;
+  word-break: break-all;
+}
+
 .stock-card-text-left {
   color: #616161;
   font-size: 18px;

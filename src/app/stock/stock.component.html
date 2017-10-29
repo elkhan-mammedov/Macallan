@@ -31,4 +31,32 @@
       </app-stock-card>
     </div>
   </div>
+
+  <div id="tops" class="center" style="display: flex;
+                                       flex-wrap: wrap;
+                                       justify-content:center;">
+    <mat-tab-group mat-stretch-tabs style="width: 75%;">
+      <mat-tab label="Most Active">
+        <div class="stock-card" *ngFor="let ss of mostActive">
+          <app-stock-summary-card
+            [ss]="ss">
+          </app-stock-summary-card>
+        </div>
+      </mat-tab>
+      <mat-tab label="Gainers">
+        <div class="stock-card" *ngFor="let ss of gainers">
+          <app-stock-summary-card
+            [ss]="ss">
+          </app-stock-summary-card>
+        </div>
+      </mat-tab>
+      <mat-tab label="Losers">
+        <div class="stock-card" *ngFor="let ss of losers">
+          <app-stock-summary-card
+            [ss]="ss">
+          </app-stock-summary-card>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

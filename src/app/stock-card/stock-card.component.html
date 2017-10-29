@@ -52,12 +52,12 @@
         <td class="bold_font stock-card-text-left">Close Time:</td>
         <td class="stock-card-text-right">{{unixTime(sqm.closeTime)}}</td>
       </tr>
-      <tr>
-        <td colspan="4" class="stock-card-text-right">
-          <button mat-raised-button>News</button>
-          <button mat-raised-button>Graph</button>
-        </td>
-      </tr>
     </table>
   </mat-card-header>
+
+  <div class="search-card" *ngFor="let nm of sqm.relatedNews">
+    <app-news-card
+      [nm]="nm">
+    </app-news-card>
+  </div>
 </mat-card>

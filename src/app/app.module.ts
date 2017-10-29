@@ -38,6 +38,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   RouterModule,
   Routes} from '@angular/router';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -45,6 +46,7 @@ import { StockComponent } from './stock/stock.component';
 import { NewsComponent } from './news/news.component';
 import { NewsCardComponent } from './news-card/news-card.component';
 import { StockCardComponent } from './stock-card/stock-card.component';
+import { StockSummaryCardComponent } from './stock-summary-card/stock-summary-card.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'news', pathMatch: 'full' },
@@ -60,7 +62,8 @@ const routes: Routes = [
     StockComponent,
     NewsComponent,
     NewsCardComponent,
-    StockCardComponent
+    StockCardComponent,
+    StockSummaryCardComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +102,8 @@ const routes: Routes = [
     MatToolbarModule,
     MatTooltipModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

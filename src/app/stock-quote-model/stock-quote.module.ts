@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {NewsModel} from '../news-model/news-model.module';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ export class StockQuoteModel {
   week52Low:	string;
   ytdChange:	string;
   imgUrl: string;
+  relatedNews: NewsModel[];
 
   constructor(symbol: string, companyName: string, primaryExchange: string,
               sector: string, calculationPrice: string, open: string,

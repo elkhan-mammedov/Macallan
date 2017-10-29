@@ -8,6 +8,7 @@ import * as jQuery from 'jquery';
 import {Http} from '@angular/http';
 import {StockRefModel} from '../stock-summary-model/stock-summary-model.module';
 import {StockQuoteModel} from '../stock-quote-model/stock-quote.module';
+import {NewsModel} from '../news-model/news-model.module';
 
 @Component({
   selector: 'app-stock',
@@ -22,9 +23,13 @@ export class StockComponent implements OnInit {
   private stockQuote = 'https://api.iextrading.com/1.0/stock/';
   stocks: StockRefModel[] = [];
   filteredStocks: StockQuoteModel[] = [];
+  mostActive: StockQuoteModel[] = [];
+  gainers: StockQuoteModel[] = [];
+  losers: StockQuoteModel[] = [];
 
   constructor(private http: Http) {
     this.getCompanyList();
+    this.getTops();
     this.stockCtrl = new FormControl();
     this.filteredStocksSearchBar = this.stockCtrl.valueChanges
       .startWith(null)
@@ -62,12 +67,14 @@ export class StockComponent implements OnInit {
       }
     }
     jQuery('#back-button').show();
+    jQuery('#tops').hide();
   }
 
   private getStockQuote(symbol: string) {
     this.http.get(this.stockQuote + symbol + '/quote').subscribe(data => {
       const sqm: StockQuoteModel = data.json();
       this.getCompanyLogo(symbol, sqm);
+      this.getRelatedNews(symbol, sqm);
       this.filteredStocks.push(sqm);
     });
   }
@@ -78,12 +85,47 @@ export class StockComponent implements OnInit {
     });
   }
 
+  private getRelatedNews(symbol: string, sqm: StockQuoteModel) {
+    this.http.get(this.stockQuote + symbol + '/news/last/3').subscribe(data => {
+      const relatedNews: NewsModel[] = [];
+      for (const n of data.json()) {
+        const nm: NewsModel = n;
+        relatedNews.push(nm);
+      }
+      sqm.relatedNews = relatedNews;
+    });
+  }
+
   private back() {
     this.filteredStocks = [];
     jQuery('#back-button').hide();
+    jQuery('#tops').show();
   }
 
   ngOnInit() {
   }
 
+  private getTops() {
+    this.http.get('https://api.iextrading.com/1.0/stock/market/list/mostactive').subscribe(data => {
+      for (const s of data.json()) {
+        console.log('in tops');
+        const ss: StockQuoteModel = s;
+        this.mostActive.push(ss);
+      }
+    });
+
+    this.http.get('https://api.iextrading.com/1.0/stock/market/list/gainers').subscribe(data => {
+      for (const s of data.json()) {
+        const ss: StockQuoteModel = s;
+        this.gainers.push(ss);
+      }
+    });
+
+    this.http.get('https://api.iextrading.com/1.0/stock/market/list/losers').subscribe(data => {
+      for (const s of data.json()) {
+        const ss: StockQuoteModel = s;
+        this.losers.push(ss);
+      }
+    });
+  }
 }

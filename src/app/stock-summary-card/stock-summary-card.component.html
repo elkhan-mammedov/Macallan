@@ -1,0 +1,17 @@
+<mat-card class="stock-card">
+  <mat-card-header>
+    <table class="stock-table">
+      <tr class="stock-card-text">
+        <td class="stock-card-text-center" width="33%">Symbol:
+          <span style="color: #FF5722;">{{ss.symbol}}</span></td>
+        <td class="stock-card-text-center" width="33%">Change:
+          <span style="color: #FF5722;">{{numberWithCommas(ss.change)}}</span></td>
+        <td class="stock-card-text-center" width="33%">Price:
+          <span style="color: #FF5722;">{{numberWithCommas(ss.latestPrice)}}</span></td>
+      </tr>
+      <tr>
+        <td class="stock-card-text-center">{{ss.companyName}}</td>
+      </tr>
+    </table>
+  </mat-card-header>
+</mat-card>
